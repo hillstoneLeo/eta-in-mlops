@@ -1,0 +1,21 @@
+schema: '2.0'
+stages:
+  parse-pcap:
+    cmd: bb parse-traffic.clj data/2017-05-02_normal.pcap data/2018-01-30_win17.pcap
+      data/2018-03-01_win9.pcap data/2018-05-03_win12.pcap
+    deps:
+    - path: data
+      hash: md5
+      md5: 35f4daf8936325aa52955ac1fc8c2f0e.dir
+      size: 1701571953
+      nfiles: 7
+    - path: parse-traffic.clj
+      hash: md5
+      md5: b84f23699c55a93fd2aff9fdc0e124a5
+      size: 1362
+    outs:
+    - path: build/zlogs
+      hash: md5
+      md5: 529b8d9f62c288e05894ff86306e51f7.dir
+      size: 1140731859
+      nfiles: 51

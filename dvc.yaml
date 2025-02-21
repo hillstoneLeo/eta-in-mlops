@@ -1,0 +1,9 @@
+stages:
+  parse-pcap:
+    cmd: bb parse-traffic.clj data/2017-05-02_normal.pcap data/2018-01-30_win17.pcap
+      data/2018-03-01_win9.pcap data/2018-05-03_win12.pcap
+    deps:
+    - data
+    - parse-traffic.clj
+    outs:
+    - build/zlogs
