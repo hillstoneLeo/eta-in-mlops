@@ -6,13 +6,13 @@ stages:
     deps:
     - path: data
       hash: md5
-      md5: 35f4daf8936325aa52955ac1fc8c2f0e.dir
-      size: 1701571953
-      nfiles: 7
+      md5: 1516477b5f007c59ce4f19416da43f19.dir
+      size: 1701572164
+      nfiles: 9
     - path: parse-traffic.clj
       hash: md5
-      md5: b84f23699c55a93fd2aff9fdc0e124a5
-      size: 1362
+      md5: 6cd479a467b1ea7b7df142f8acedc31e
+      size: 1650
     outs:
     - path: build/zlogs
       hash: md5

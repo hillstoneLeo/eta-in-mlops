@@ -5,6 +5,14 @@
          '[babashka.fs :as fs])
 
 (def build-dir "./build/zlogs")  ; /data/zlogs: from "outs" section in dvc.yaml
+(def cont-exe
+  (cond
+    (fs/which "podman") "podman"
+    (fs/which "docker") "docker"
+    :else (throw (ex-info "podman/docker not detected"))))
+(if-not (fs/which "dvc") (throw (ex-info "dvc not detected")) nil)
+(if-not (fs/which "bb") (throw (ex-info "babashka not detected")) nil)
+  
 
 (defn parse-pcap [inp]
   (cond
@@ -16,7 +24,7 @@
             (println (str "Write parsed logs of " inp " into " parent-folder))
             (fs/delete-tree log-folder)
             (fs/create-dir log-folder)
-            (shell "docker"
+            (shell cont-exe
                    "run" "--rm"
                    "-v" (str "./" parent-folder ":/data")
                    "zeek/zeek" "zeek"
