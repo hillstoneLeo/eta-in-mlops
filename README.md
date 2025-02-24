@@ -20,6 +20,6 @@ dvc repro
 
 You can reproduce intermediate data with:
 ```sh
-rm -rf build
+rm -rf build .dvc/cache
 dvc repro
 ```

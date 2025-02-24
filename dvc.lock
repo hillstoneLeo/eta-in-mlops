@@ -11,11 +11,11 @@ stages:
       nfiles: 9
     - path: parse-traffic.clj
       hash: md5
-      md5: 6cd479a467b1ea7b7df142f8acedc31e
-      size: 1650
+      md5: f649a62b9942e2566b0817eb129ac6fe
+      size: 1713
     outs:
     - path: build/zlogs
       hash: md5
-      md5: 529b8d9f62c288e05894ff86306e51f7.dir
-      size: 1140731859
+      md5: 539d7a263e62392e790cac0ce7a740dd.dir
+      size: 1041921229
       nfiles: 51

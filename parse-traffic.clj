@@ -9,10 +9,9 @@
   (cond
     (fs/which "podman") "podman"
     (fs/which "docker") "docker"
-    :else (throw (ex-info "podman/docker not detected"))))
-(if-not (fs/which "dvc") (throw (ex-info "dvc not detected")) nil)
-(if-not (fs/which "bb") (throw (ex-info "babashka not detected")) nil)
-  
+    :else (throw (ex-info "podman/docker not detected" {:missing "podman/docker"}))))
+(if-not (fs/which "dvc") (throw (ex-info "dvc not detected" {:missing "dvc"})) nil)
+(if-not (fs/which "bb") (throw (ex-info "babashka not detected" {:missing "babashka"})) nil)
 
 (defn parse-pcap [inp]
   (cond
