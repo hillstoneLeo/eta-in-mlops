@@ -1,2 +1,6 @@
 [core]
     autostage = true
+    remote = datarepo
+['remote "datarepo"']
+    url = http://10.160.43.82:6785
+    method = PUT
